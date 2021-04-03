@@ -2,6 +2,7 @@ package securitypoc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +36,9 @@ public class JwtAuthServiceApp implements CommandLineRunner {
     admin.setUsername("admin");
     admin.setPassword("admin");
     admin.setEmail("admin@email.com");
-    admin.setRoles(new ArrayList<>(Arrays.asList(Role.ROLE_ADMIN)));
+    admin.setRoles(new HashSet<>(Arrays.asList(Role.ROLE_ADMIN)));
 
-    userServiceImpl.signup(admin);
+    userServiceImpl.createUser(admin);
   }
 
 }

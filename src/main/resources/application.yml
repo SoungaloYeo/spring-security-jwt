@@ -29,9 +29,10 @@ security:
       secret-key: secret-key
       expire-length: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 miliseconds
       
-UserController:
-  signin: Authenticates user and returns its JWT token.
-  signup: Creates user and returns its JWT token
+UserResource:
+  getToken: Authenticates user and returns its JWT token.
+  create: Creates user and returns its JWT token
+  updateUserRoles: Update user roles
   delete: Deletes specific user by username
-  search: Returns specific user by username
-  me: Returns current user's data
+  getUserByUsername: Returns specific user by username
+  getUserInfo: Returns current user's data

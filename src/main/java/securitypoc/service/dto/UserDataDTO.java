@@ -1,6 +1,6 @@
 package securitypoc.service.dto;
 
-import java.util.List;
+import java.util.Set;
 
 import io.swagger.annotations.ApiModelProperty;
 import securitypoc.config.Role;
@@ -14,7 +14,7 @@ public class UserDataDTO {
   @ApiModelProperty(position = 2)
   private String password;
   @ApiModelProperty(position = 3)
-  List<Role> roles;
+  Set<Role> roles;
 
   public String getUsername() {
     return username;
@@ -40,11 +40,11 @@ public class UserDataDTO {
     this.password = password;
   }
 
-  public List<Role> getRoles() {
+  public Set<Role> getRoles() {
     return roles;
   }
 
-  public void setRoles(List<Role> roles) {
+  public void setRoles(Set<Role> roles) {
     this.roles = roles;
   }
 

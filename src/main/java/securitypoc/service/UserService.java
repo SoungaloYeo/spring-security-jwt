@@ -6,15 +6,17 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface UserService {
 
-    String signin(String username, String password);
+    String createUser(User user);
 
-    String signup(User user);
+    String updateUserRoles(User user);
 
-    void delete(String username);
+    User getUserInfo(HttpServletRequest req);
 
-    User whoami(HttpServletRequest req);
+    User getUserByUsername(String username);
 
-    String refresh(String username);
+    String getToken(String username, String password);
 
-    User search(String username);
+    String refreshToken(String username);
+
+    void deleteUser(String username);
 }

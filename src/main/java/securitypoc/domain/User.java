@@ -2,7 +2,7 @@ package securitypoc.domain;
 
 import securitypoc.config.Role;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -27,11 +27,11 @@ public class User {
   @Column(unique = true, nullable = false)
   private String email;
 
-  @Size(min = 5, message = "Minimum password length: 8 characters")
+  @Size(min = 5, message = "Minimum password length: 5 characters")
   private String password;
 
   @ElementCollection(fetch = FetchType.EAGER)
-  List<Role> roles;
+  Set<Role> roles;
 
   public Integer getId() {
     return id;
@@ -65,11 +65,11 @@ public class User {
     this.password = password;
   }
 
-  public List<Role> getRoles() {
+  public Set<Role> getRoles() {
     return roles;
   }
 
-  public void setRoles(List<Role> roles) {
+  public void setRoles(Set<Role> roles) {
     this.roles = roles;
   }
 
